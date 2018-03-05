@@ -1,0 +1,10 @@
+This project allows collaborative, interactive neuroevolution of Minecraft agents. Minecraft simulations and the interaction with them is handled by Project Malmo: https://github.com/Microsoft/malmo
+
+Neuroevolution builds on a custom version of SharpNEAT: https://github.com/colgreen/sharpneat
+In particular, we have adapted https://github.com/pablogps/MalmoNEAT, which itself builds on https://github.com/pablogps/EspNeat
+
+Details of the modular framework can be found in Interactive Evolution of Complex Behaviours through Skill Encapsulation, González de Prado Salas and Sebastian Risi 2017 (found here: https://gonzalezdepradosalas.weebly.com/publications.html)
+
+This project is released under the same license as SharpNEAT: http://sharpneat.sourceforge.net/licensing.htm which is the MIT License, changed from GNU General Public License, minimum version 3 in a previous version.
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
