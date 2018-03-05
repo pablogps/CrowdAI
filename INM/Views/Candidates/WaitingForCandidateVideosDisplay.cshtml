@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "WaitingForCandidateVideosDisplay";
+}
+
+@{
+    System.Diagnostics.Debug.WriteLine("This is the waiting page");
+}
+
+<h3>Your videos are being created. This should take less than a minute.</h3>
+
+<p>Thank you for your patience!</p>
+<p id="demo">.</p>
+<p><font color="#626262"><i><span id="quote">.</span></i></font></p>
+
+<script>
+    var myVar = setInterval(myTimer, 800);
+    var d = ".";
+    function myTimer() {
+        d += ".";
+        document.getElementById("demo").innerHTML = d;
+    }
+</script>
+
+<script type="text/javascript">
+    var quotes = [];
+    quotes[0] = "I have a new philosophy. I'm only going to dread one day at a time.—Charles Schultz";
+    quotes[1] = "I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.—Marilyn Monroe";
+    quotes[2] = "Be yourself; everyone else is already taken.—Oscar Wilde";
+    quotes[3] = "In three words I can sum up everything I've learned about life: it goes on.—Robert Frost";
+    quotes[4] = "If you want to know what a man's like, take a good look at how he treats his inferiors, not his equals.—J.K. Rowling";
+    quotes[5] = "I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.—Maya Angelou";
+    quotes[6] = "Always forgive your enemies; nothing annoys them so much.—Oscar Wilde";
+    quotes[7] = "Learn from the mistakes of others. You can’t live long enough to make them all yourself.—Eleanor Roosevelt";
+    quotes[8] = "I am so clever that sometimes I don't understand a single word of what I am saying.—Oscar Wilde (This brings memories from many conferences…)";
+    quotes[9] = "Give a man a fire and he's warm for a day, but set fire to him and he's warm for the rest of his life.—Terry Pratchett";
+    quotes[10] = "Whenever you are blue or lonely or stricken by some humiliating thing you did, the cure and the hope is in caring about other people.—Diane Sawyer";
+    quotes[11] = "If cats looked like frogs we'd realize what nasty, cruel little bastards they are. Style. That's what people remember.—Terry Pratchett";
+    quotes[12] = "I always wanted to be somebody, but I should have been more specific.—Lily Tomlin";
+    quotes[13] = "In ancient times cats were worshipped as gods; they have not forgotten this.—Terry Pratchett";
+    quotes[14] = "Sometimes I worry about being a success in a mediocre world.—Lily Tomlin";
+    quotes[15] = "In the beginning there was nothing, which exploded.—Terry Pratchett";
+    quotes[16] = "If high heels were so wonderful, men would be wearing them.—Sue Grafton";
+    quotes[17] = "Wisdom comes from experience. Experience is often a result of lack of wisdom.—Terry Pratchett";
+    quotes[18] = "The idea of strictly minding our own business is moldy rubbish. Who could be so selfish?—Mytle Barker (Although I could not find who this person is!)";
+    quotes[19] = "Real stupidity beats artificial intelligence every time.—Terry Pratchett";
+    quotes[20] = "War is what happens when language fails.—Margaret Atwood";
+    quotes[21] = "Sometimes I lie awake at night, and ask, 'Where have I gone wrong?' Then a voice says to me, 'This is going to take more than one night.'—Charles Schultz";
+    quotes[22] = "I'm always amazed at what women will do because they're afraid of being rude.—Tina Fey";
+    quotes[23] = "No one is useless in this world who lightens the burdens of another.—Charles Dickens";
+    quotes[24] = "Myro, a girl, letting fall a child's tears, raised this little tomb for the locust that sang in the seed-land and for the oak-dwelling cicada; implacable Hades holds their double song.—Anyte of Tegea";
+    quotes[25] = "Heaven knows we need never be ashamed of our tears, for they are rain upon the blinding dust of earth, overlying our hard hearts. I was better after I had cried, than before—more sorry, more aware of my own ingratitude, more gentle.—Charles Dickens";
+    quotes[26] = "sewing in the lamplight / I teach spelling to my child— / autumn rain—Sugita Hisajo";
+    quotes[27] = "It is amazing how complete is the delusion that beauty is goodness.—Leo Tolstoi";
+    quotes[28] = "chapped hands / and no rice — / I weep with a monkey's face—Ishibashi Hideno (1947)";
+    quotes[29] = "Two possibilities exist: either we are alone in the Universe or we are not. Both are equally terrifying.—Arthur C. Clarke";
+    quotes[30] = "as if mending / socks, I repair my mind / and live on—Yoshino Yoshiko";
+    quotes[31] = "The woods are lovely, dark and deep, But I have promises to keep, And miles to go before I sleep, And miles to go before I sleep.—Robert Frost";
+    quotes[32] = "In a spiral galaxy, the ratio of dark-to-light matter is about a factor of ten. That's probably a good number for the ratio of our ignorance-to-knowledge. We're out of kindergarten, but only in about third grade.—Vera Rubin";
+    quotes[33] = "In war, there are no unwounded soldiers.—José Naroskyn";
+
+    var index = Math.floor(Math.random() * quotes.length);
+    document.getElementById("quote").innerHTML = quotes[index];
+</script>
+
+<script type="text/javascript">
+    window.location = "@Url.Action("WaitForCandidates", "Auxiliary")";
+</script>

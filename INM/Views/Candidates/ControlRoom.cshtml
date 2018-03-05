@@ -1,0 +1,42 @@
+﻿@model IEnumerable<INM.Models.Candidate>
+
+@{
+    ViewBag.Title = "ControlRoom";
+}
+
+<body>
+    <div class="jumbotron">
+        <h2>Welcome to the control room!</h2>
+        <p class="lead">Hello, this is a secret place and you should not be here!</p>
+        <p class="btn btn-primary btn-lg">@Html.ActionLink("Export database", "ExportDatabase", null, new { @style = "color:#e8e8ef;" })</p>
+    </div>
+
+    <p>@Html.ActionLink("Check evolution", "CheckEvolutionAlgorithm", "Home")</p>
+    <p>@Html.ActionLink("Stop evolution", "StopEvolution")</p>
+</body>
+
+<table class="table">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <video id="elementName" width="432" height="240" controls autoplay loop>
+                    <source src=@item.VideoPath type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </td>
+            <td>
+                <!-- arroba Html.ActionLink("Edit", "Edit", new { id = item.CandidateID }) | -->
+                @Html.ActionLink("Details", "Details", new { id = item.CandidateID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CandidateID }) |
+                @Html.ActionLink("Branch!", "Branch", new { id = item.CandidateID })
+            </td>
+        </tr>
+    }
+</table>

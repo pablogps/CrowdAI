@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D16391BF-C03D-488D-AD5A-BE8D4F850132}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Evolution</RootNamespace>
+    <AssemblyName>Evolution</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="SharpNEAT\OriginalFiles\Properties\Settings.settings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Malmo\BuilderController.cs" />
+    <Compile Include="Malmo\MalmoObservations\ManyTiles.cs" />
+    <Compile Include="Malmo\MazeController.cs" />
+    <Compile Include="Malmo\MazeControllerNoTurn.cs" />
+    <Compile Include="Malmo\MazeControllerWithDiagonals.cs" />
+    <Compile Include="Malmo\MazeMaker.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Core\EspNeat\ParallelEvaluationParameters.cs" />
+    <Compile Include="UsersInfo\ActiveUsersList.cs" />
+    <Compile Include="EvolutionCoordination.cs" />
+    <Compile Include="GenomeScreenOrder.cs" />
+    <Compile Include="Malmo\BrainToMalmoController.cs" />
+    <Compile Include="Malmo\MalmoObservations\FourTiles.cs" />
+    <Compile Include="Malmo\MalmoObservations\JsonObservations.cs" />
+    <Compile Include="Malmo\MalmoObservations\ObservationEventArgs.cs" />
+    <Compile Include="Malmo\MinimalMalmo.cs" />
+    <Compile Include="Malmo\ProgramMalmo.cs" />
+    <Compile Include="EvolutionEventsArgs.cs" />
+    <Compile Include="Malmo\RawXMLmissionFactory.cs" />
+    <Compile Include="SharpNEAT\IecEsp\ModuleOperationManager.cs" />
+    <Compile Include="SharpNEAT\IecEsp\UIvariables.cs" />
+    <Compile Include="SharpNEAT\MyExperiment.cs" />
+    <Compile Include="SharpNEAT\OnlineMalmoPseudoEvaluator.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Core\AuxFitnessInfo.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Core\CoordinateVector.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Core\EspNeat\IGenome.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Core\EspNeat\IGenomeFactory.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Core\EspNeat\IPhenomeEvaluator.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Core\EvaluationInfo.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Core\FitnessInfo.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Core\GenomeFitnessComparer.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Core\IDistanceMetric.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Core\EspNeat\IEvolutionAlgorithm.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Core\IGenomeDecoder.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Core\EspNeat\IGenomeListEvaluator.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Core\ISpeciationStrategy.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Core\ParallelGenomeListEvaluator.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Core\RunState.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Core\SelectiveGenomeListEvaluator.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Core\SerialGenomeListEvaluator.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Core\Specie.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Core\UpdateMode.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Core\UpdateScheme.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Decoders\CyclicNetworkFactory.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Decoders\EspNeat\EspCyclicNetworkFactory.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Decoders\EspNeat\NeatGenomeDecoder.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Decoders\EspNeat\NetworkActivationScheme.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Decoders\FastAcyclicNetworkFactory.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Decoders\FastCyclicNetworkFactory.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Decoders\HyperNeat\DefaultNodeSetMappingFunction.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Decoders\HyperNeat\HyperNeatDecoder.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Decoders\HyperNeat\INodeSetMappingFunction.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Decoders\HyperNeat\NodeSetMapping.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Decoders\HyperNeat\Substrate.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Decoders\HyperNeat\SubstrateConnection.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Decoders\HyperNeat\SubstrateNode.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Decoders\HyperNeat\SubstrateNodeSet.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\DistanceMetrics\DistanceMetricUtils.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\DistanceMetrics\EuclideanDistanceMetric.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\DistanceMetrics\ManhattanDistanceMetric.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\EvolutionAlgorithms\ComplexityRegulation\ComplexityCeilingType.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\EvolutionAlgorithms\ComplexityRegulation\ComplexityRegulationMode.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\EvolutionAlgorithms\ComplexityRegulation\DefaultComplexityRegulationStrategy.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\EvolutionAlgorithms\ComplexityRegulation\IComplexityRegulationStrategy.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\EvolutionAlgorithms\ComplexityRegulation\NullComplexityRegulationStrategy.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\EvolutionAlgorithms\EspNeat\AbstractGenerationalAlgorithm.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\EvolutionAlgorithms\EspNeat\NeatEvolutionAlgorithm.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\EvolutionAlgorithms\EspNeat\NeatEvolutionAlgorithmOffspringCreator.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\EvolutionAlgorithms\NeatAlgorithmStats.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\EvolutionAlgorithms\NeatEvolutionAlgorithmParameters.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Genomes\EspNeat\ConnectionGene.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Genomes\EspNeat\ConnectionGeneList.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Genomes\EspNeat\ConnectionGeneListBuilder.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Genomes\EspNeat\NeatGenome.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Genomes\EspNeat\NeatGenomeFactory.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Genomes\EspNeat\NeatGenomeParameters.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Genomes\EspNeat\NeatGenomeXmlIO.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Genomes\EspNeat\NeuronGene.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Genomes\EspNeat\NeuronGeneList.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Genomes\HyperNeat\CppnGenomeFactory.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Genomes\RbfNeat\RbfGenomeFactory.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Genomes\SharpNeatCompatible\AddedNeuronGeneStruct.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Genomes\SharpNeatCompatible\ConnectionGeneComparer.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Genomes\SharpNeatCompatible\ConnectionMutationInfo.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Genomes\SharpNeatCompatible\ConnectionMutationInfoList.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Genomes\SharpNeatCompatible\ConnectionPerturbanceType.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Genomes\SharpNeatCompatible\ConnectionSelectionType.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Genomes\SharpNeatCompatible\CorrelationItem.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Genomes\SharpNeatCompatible\CorrelationItemType.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Genomes\SharpNeatCompatible\CorrelationResults.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Genomes\SharpNeatCompatible\CorrelationStatistics.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Genomes\SharpNeatCompatible\NeatGenomeStats.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Genomes\SharpNeatCompatible\NeuronGeneComparer.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\ActivationFunctions\ActivationFunctionInfo.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\ActivationFunctions\Bipolar\BipolarGaussian.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\ActivationFunctions\Bipolar\BipolarSigmoid.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\ActivationFunctions\Bipolar\Linear.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\ActivationFunctions\Bipolar\Sine.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\ActivationFunctions\EspNeat\InverseAbsoluteSigmoidForOut.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\ActivationFunctions\EspNeat\InverseAbsoluteSteepSigmoid.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\ActivationFunctions\EspNeat\Proportional.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\ActivationFunctions\EspNeat\StepFunctionOffset.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\ActivationFunctions\NullFn.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\ActivationFunctions\RadialBasis\RbfGaussian.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\ActivationFunctions\Unipolar\Absolute.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\ActivationFunctions\Unipolar\AbsoluteRoot.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\ActivationFunctions\Unipolar\Gaussian.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\ActivationFunctions\Unipolar\InverseAbsoluteSigmoid.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\ActivationFunctions\Unipolar\PlainSigmoid.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\ActivationFunctions\Unipolar\ReducedSigmoid.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\ActivationFunctions\Unipolar\SteepenedSigmoid.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\ActivationFunctions\Unipolar\SteepenedSigmoidApproximation.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\ActivationFunctions\Unipolar\StepFunction.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\AcyclicNetworkDepthAnalysis.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\ConnectionEndpointsStruct.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\ConnectionList.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\CyclicNetworkDepthAnalysis.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\CyclicNetworkTest.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\Domains\EspNeat\ExperimentUtils.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\Domains\INeatExperiment.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\Domains\IntPoint.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\Domains\PolarPoint.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\Domains\XmlUtils.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\EspNeat\DefaultActivationFunctionLibrary.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\EspNeat\IActivationFunction.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\EspNeat\NetworkXmlIO.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\EspNeat\NodeType.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\IActivationFunctionLibrary.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\IConnectionList.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\INetworkConnection.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\INetworkDefinition.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\INetworkNode.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\INodeList.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\NetworkConnection.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\NetworkConnectivityData.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\NetworkDefinition.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\NetworkDepthInfo.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\NetworkNode.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\NodeConnectivityData.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Network\NodeList.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Phenomes\IBlackBox.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Phenomes\ISignalArray.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Phenomes\MappingSignalArray.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Phenomes\NeuralNets\AcyclicNetwork\FastAcyclicNetwork.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Phenomes\NeuralNets\AcyclicNetwork\LayerInfo.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Phenomes\NeuralNets\CyclicNetwork\Connection.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Phenomes\NeuralNets\CyclicNetwork\CyclicNetwork.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Phenomes\NeuralNets\CyclicNetwork\Neuron.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Phenomes\NeuralNets\CyclicNetwork\RelaxingCyclicNetwork.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Phenomes\NeuralNets\EspNeat\EspCyclicNetwork.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Phenomes\NeuralNets\EspNeat\PhenomeVariables.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Phenomes\NeuralNets\FastCyclicNetwork\FastConnection.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Phenomes\NeuralNets\FastCyclicNetwork\FastCyclicNetwork.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Phenomes\NeuralNets\FastCyclicNetwork\FastRelaxingCyclicNetwork.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Phenomes\SignalArray.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\SharpNeatException.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\SpeciationStrategies\GenomeDistancePair.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\SpeciationStrategies\KMeansClusteringStrategy.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\SpeciationStrategies\ParallelKMeansClusteringStrategy.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\SpeciationStrategies\RandomClusteringStrategy.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\SpeciationStrategies\SpeciationUtils.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Utility\BoxMullerGaussianSampler.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Utility\CircularBuffer.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Utility\DoubleCircularBufferWithStats.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Utility\EspNeat\XmlIoUtils.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Utility\FastRandom.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Utility\FrequencyDistributionData.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Utility\KeyedCircularBuffer.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Utility\Point2DDouble.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Utility\RouletteWheel.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Utility\RouletteWheelLayout.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Utility\UInt32IdGenerator.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Utility\Utilities.cs" />
+    <Compile Include="SharpNEAT\OriginalFiles\Utility\ZigguratGaussianSampler.cs" />
+    <Compile Include="SharpNEAT\PopulationReadWrite.cs" />
+    <Compile Include="SharpNEAT\SimpleNeatExperiment.cs" />
+    <Compile Include="UsersInfo\User.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LICENSE.txt" />
+    <Content Include="minecraftWorldXML.txt" />
+    <Content Include="SharpNEAT\Malmo.config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SharpNEAT\OriginalFiles\Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ExperimentsData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MalmoNET">
+      <HintPath>..\INM\bin\MalmoNET.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Redzen, Version=3.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Redzen.3.0.2\lib\net40\Redzen.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.18.0.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpCompress.0.18.0\lib\net45\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

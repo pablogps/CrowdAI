@@ -1,0 +1,179 @@
+﻿@model List<INM.Models.Candidate>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<table class="table-condensed">
+    <tr>
+        <td>
+            <img src="maze.png" alt="Top view of the maze showing the starting point and the goal" width="432" height="240">
+        </td>
+        <td>
+            <video id="parentVideo" width="432" height="240" controls autoplay loop>
+                <source src=@Model[0].VideoPath type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p align="center">@Html.ActionLink("Reset evolution", "ResetEvolution")</p>
+        </td>
+        <td>
+            <table class="table-condensed">
+                <tr>
+                    <th>
+                        <p class="btn btn-primary">
+                            <strong>
+                                @Html.ActionLink("Small change", "NextGeneration", new { candidateIndex = 0, isNormalMutations = true }, new { @style = "color:#e8e8ef;" })
+                            </strong>
+                        </p>
+                    </th>
+                    <th>
+                        <p class="btn btn-primary">
+                            <strong>
+                                @Html.ActionLink("Big change", "NextGeneration", new { candidateIndex = 0, isNormalMutations = false }, new { @style = "color:#e8e8ef;" })
+                            </strong>
+                        </p>
+                    </th>
+                    <th>
+                        <p class="btn btn-primary">
+                            <strong>
+                                @Html.ActionLink("Publish", "Create", new { id = @Model[0].CandidateID, candidateIndex = 0 }, new { @style = "color:#e8e8ef;" })
+                            </strong>
+                        </p>
+                    </th>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td><span style="display:block; height: 20px;"></span></td>
+    </tr>
+
+    <tr>
+        <td>
+            <video id="childOneVideo" width="432" height="240" controls autoplay loop>
+                <source src=@Model[1].VideoPath type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </td>
+        <td>
+            <video id="childTwoVideo" width="432" height="240" controls autoplay loop>
+                <source src=@Model[2].VideoPath type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <table class="table-condensed">
+                <tr>
+                    <th>
+                        <p class="btn btn-primary">
+                            <strong>
+                                @Html.ActionLink("Small change", "NextGeneration", new { candidateIndex = 1, isNormalMutations = true }, new { @style = "color:#e8e8ef;" })
+                            </strong>
+                        </p>
+                    </th>
+                    <th>
+                        <p class="btn btn-primary">
+                            <strong>
+                                @Html.ActionLink("Big change", "NextGeneration", new { candidateIndex = 1, isNormalMutations = false }, new { @style = "color:#e8e8ef;" })
+                            </strong>
+                        </p>
+                    </th>
+                    <th>
+                        <p class="btn btn-primary">
+                            <strong>
+                                @Html.ActionLink("Publish", "Create", new { id = @Model[1].CandidateID, candidateIndex = 1 }, new { @style = "color:#e8e8ef;" })
+                            </strong>
+                        </p>
+                    </th>
+                </tr>
+            </table>
+        </td>
+        <td>
+            <table class="table-condensed">
+                <tr>
+                    <th>
+                        <p class="btn btn-primary">
+                            <strong>
+                                @Html.ActionLink("Small change", "NextGeneration", new { candidateIndex = 2, isNormalMutations = true }, new { @style = "color:#e8e8ef;" })
+                            </strong>
+                        </p>
+                    </th>
+                    <th>
+                        <p class="btn btn-primary">
+                            <strong>
+                                @Html.ActionLink("Big change", "NextGeneration", new { candidateIndex = 2, isNormalMutations = false }, new { @style = "color:#e8e8ef;" })
+                            </strong>
+                        </p>
+                    </th>
+                    <th>
+                        <p class="btn btn-primary">
+                            <strong>
+                                @Html.ActionLink("Publish", "Create", new { id = @Model[2].CandidateID, candidateIndex = 2 }, new { @style = "color:#e8e8ef;" })
+                            </strong>
+                        </p>
+                    </th>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td><span style="display:block; height: 20px;"></span></td>
+    </tr>
+
+    <tr>
+        <td>
+            <video id="childOneVideo" width="432" height="240" controls autoplay loop>
+                <source src=@Model[3].VideoPath type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table class="table-condensed">
+                <tr>
+                    <th>
+                        <p class="btn btn-primary">
+                            <strong>
+                                @Html.ActionLink("Small change", "NextGeneration", new { candidateIndex = 3, isNormalMutations = true }, new { @style = "color:#e8e8ef;" })
+                            </strong>
+                        </p>
+                    </th>
+                    <th>
+                        <p class="btn btn-primary">
+                            <strong>
+                                @Html.ActionLink("Big change", "NextGeneration", new { candidateIndex = 3, isNormalMutations = false }, new { @style = "color:#e8e8ef;" })
+                            </strong>
+                        </p>
+                    </th>
+                    <th>
+                        <p class="btn btn-primary">
+                            <strong>
+                                @Html.ActionLink("Publish", "Create", new { id = @Model[3].CandidateID, candidateIndex = 3 }, new { @style = "color:#e8e8ef;" })
+                            </strong>
+                        </p>
+                    </th>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<script>
+    var vid = document.getElementById("parentVideo");
+    vid.playbackRate = 0.2;
+    var vid = document.getElementById("childOneVideo");
+    vid.playbackRate = 0.2;
+    var vid2 = document.getElementById("childTwoVideo");
+    vid2.playbackRate = 0.2;
+</script>

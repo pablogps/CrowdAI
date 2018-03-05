@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+  <PopulationSize>3</PopulationSize>
+  <SpecieCount>2</SpecieCount>
+  <Activation>
+    <Scheme>EspCyclic</Scheme>
+    <Iters>3</Iters>
+  </Activation>
+  <ComplexityRegulationStrategy>Absolute</ComplexityRegulationStrategy>
+  <ComplexityThreshold>50</ComplexityThreshold>
+  <Description>
+    Placeholder description.
+  </Description>
+
+</Config>

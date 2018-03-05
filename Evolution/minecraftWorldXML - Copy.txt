@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Mission xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <About>
+    <Summary>Nothing.</Summary>
+  </About>
+
+  <ModSettings>
+    <MsPerTick>20</MsPerTick>
+  </ModSettings>
+
+  <ServerSection>
+    <ServerInitialConditions>
+      <Time><StartTime>1</StartTime></Time>
+    </ServerInitialConditions>
+    <ServerHandlers>
+      <FlatWorldGenerator generatorString="3;7,45*48;,biome_1"/>
+      <ServerQuitFromTimeUp timeLimitMs="3000"/>
+      <ServerQuitWhenAnyAgentFinishes/>
+    </ServerHandlers>
+  </ServerSection>
+
+  <AgentSection mode="Creative">
+    <Name>Paco</Name>
+    <AgentStart>
+      <Placement x="0.0" y="46.0" z="0.0" pitch="45" yaw="0"/>
+      <Inventory>
+        <InventoryItem slot="0" type="dirt"/>
+      </Inventory>
+    </AgentStart>
+    <AgentHandlers>
+      <ChatCommands/>
+      <ObservationFromFullStats/>
+      <ObservationFromGrid>
+        <Grid name="level0">
+          <min x="-1" y="0" z="-1"/>
+          <max x="1" y="0" z="1"/>
+        </Grid>
+        <Grid name="levelSub1">
+          <min x="-1" y="-1" z="-1"/>
+          <max x="1" y="-1" z="1"/>
+        </Grid>
+        <Grid name="levelSub2">
+          <min x="-1" y="-2" z="-1"/>
+          <max x="1" y="-2" z="1"/>
+        </Grid>
+      </ObservationFromGrid>
+      <ContinuousMovementCommands turnSpeedDegs="180"/>
+      <VideoProducer>
+          <Width>432</Width>
+          <Height>240</Height>
+      </VideoProducer>
+    </AgentHandlers>
+  </AgentSection>
+
+</Mission>

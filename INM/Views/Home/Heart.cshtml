@@ -1,0 +1,13 @@
+﻿
+<head>
+    <script type="text/javascript" src="~/Scripts/heartBeat.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+
+<body>
+    <p>Hello!</p>
+    
+    <script type="text/javascript">
+        LaunchHeartBeat('@Url.Action("ReceiveHeartbeat", "Auxiliary")');
+    </script>
+</body>

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<INM.Models.Candidate>
+
+@{
+    ViewBag.Title = "ShowSavedCandidates";
+}
+
+<table class="table">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <video id="elementName" width="432" height="240" controls autoplay loop>
+                    <source src=@item.VideoPath type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </td>
+            <td>
+                <!-- arroba Html.ActionLink("Edit", "Edit", new { id = item.CandidateID }) | -->
+                @Html.ActionLink("Details", "Details", new { id = item.CandidateID })
+                <!-- arroba Html.ActionLink("Delete", "Delete", new { id = item.CandidateID }) | -->
+                <p class="btn btn-primary btn-lg">@Html.ActionLink("Evolve", "Branch", new { id = item.CandidateID }, new { @style = "color:#e8e8ef;" })</p>
+            </td>
+            </tr>
+        }
+    </table>
